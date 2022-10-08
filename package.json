@@ -1,0 +1,18 @@
+{
+  "name": "buttons-2.0",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "KaiCodesTech",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.5.0",
+    "giphy-api": "^2.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.24.0"
+  }
+}
