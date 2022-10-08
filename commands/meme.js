@@ -1,6 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
-const { giphyApiKey } = require('../config.json');
-const giphy = require('giphy-api')(giphyApiKey);
+require('dotenv').config();
+const giphy = require('giphy-api')(process.env.giphyApiKey);
 // const fetch = require('node-fetch');
 
 module.exports = {

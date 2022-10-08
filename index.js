@@ -1,5 +1,5 @@
 const { Client,  GatewayIntentBits, Collection, REST, Routes } = require('discord.js');
-const { token, clientId } = require('./config.json');
+require('dotenv').config();
 const path = require('node:path');
 const fs = require('node:fs');
 
@@ -30,14 +30,14 @@ for (const file of eventFiles) {
     }
 }
 
-const rest = new REST({ version: '10' }).setToken(token);
+const rest = new REST({ version: '10' }).setToken(process.env.token);
 
 (async () => {
 	try {
 		console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
 		const data = await rest.put(
-			Routes.applicationCommands(clientId),
+			Routes.applicationCommands(process.env.clientId),
 			{ body: commands },
 		);
 
@@ -47,4 +47,4 @@ const rest = new REST({ version: '10' }).setToken(token);
 	}
 })();
 
-client.login(token);
+client.login(process.env.token);
